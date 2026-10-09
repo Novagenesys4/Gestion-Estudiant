@@ -1,0 +1,26 @@
+<%@ page pageEncoding="UTF-8" %>
+<%-- Barre de navigation commune. Définir <c:set var="active" value="accueil|inscription|liste"/> avant l'inclusion. --%>
+<header class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="${pageContext.request.contextPath}/index.jsp">
+            <span class="brand-logo" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+            </span>
+            <span class="brand-text">Gestion des étudiants</span>
+        </a>
+        <nav class="nav-links" aria-label="Navigation principale">
+            <a href="${pageContext.request.contextPath}/index.jsp" <c:if test="${active == 'accueil'}">aria-current="page"</c:if>>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+                <span>Accueil</span>
+            </a>
+            <a href="${pageContext.request.contextPath}/inscription" <c:if test="${active == 'inscription'}">aria-current="page"</c:if>>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+                <span>Inscription</span>
+            </a>
+            <a href="${pageContext.request.contextPath}/etudiants" <c:if test="${active == 'liste'}">aria-current="page"</c:if>>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+                <span>Étudiants</span>
+            </a>
+        </nav>
+    </div>
+</header>
